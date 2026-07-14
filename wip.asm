@@ -109,9 +109,11 @@ SECTION "rom3", ROMX[$4000], BANK[3]
 	dr PrintSafariZoneSteps, $427b
 	dr LoadWildData, $4b62
 	dr UseItem_, $52ed
+	dr GetMaxPP, $65ab
 	dr TossItem_, $6625
 	dr IsKeyItem_, $6698
 	dr IsNextTileShoreOrWater, $67f8
+	dr GymLeaderFaceAndBadgeTileGraphics, $690b
 	dr MarkTownVisitedAndLoadToggleableObjects, $6f83
 	dr TryPushingBoulder, $7091
 	dr DoBoulderDustAnimation, $7121
@@ -121,32 +123,9 @@ SECTION "rom3", ROMX[$4000], BANK[3]
 	dr PrintBookshelfText, $79ce
 
 
-SECTION "rom4", ROMX[$5883], BANK[4]
-; ROM $04 : $10000 - $13FFF
-
-	dr DrawPartyMenu_, $5883
-	dr RedrawPartyMenu_, $5894
-	dr RedPicFront, $5aa5
-	dr ShrinkPic1, $5ba4
-	dr ShrinkPic2, $5bfe
-	dr StartMenu_Pokedex, $5c30
-	dr StartMenu_Pokemon, $5c44
-	dr ErasePartyMenuCursors, $5ea6
-	dr StartMenu_Item, $5ebb
-	dr StartMenu_TrainerInfo, $6018
-	dr StartMenu_SaveReset, $61a4
-	dr StartMenu_Option, $61b7
-	dr SwitchPartyMon, $61d4
-
-
-SECTION "rom5", ROMX[$4000], BANK[5]
+SECTION "rom5", ROMX[$7cb0], BANK[5]
 ; ROM $05 : $14000 - $17FFF
 
-	dr _InitMapSprites, $401b
-	dr ReloadWalkingTilePatterns, $40d2
-	dr RedBikeSprite, $43f1
-	dr RedSprite, $4571
-	dr SeelSprite, $7ab1
 	dr ActivatePC, $7cb0
 
 
@@ -209,7 +188,9 @@ SECTION "rom14", ROMX[$4000], BANK[14]
 	dr TrainerNames, $597e
 	dr FormatMovesString, $5b09
 	dr InitList, $5b57
+	dr PokeballTileGraphics, $6a2b
 	dr TryEvolvingMon, $6dbb
+	dr EvosMovesPointerTable, $71e8
 
 
 SECTION "rom15", ROMX[$4000], BANK[15]
@@ -219,6 +200,8 @@ DisplayBattleMenu::
 	dr AnyPartyAlive, $4ae8
 	dr ReadPlayerMonCurHPAndStatus, $4e08
 	dr LoadHudTilePatterns, $6ffd
+	dr PrintButItFailedText_, $7b30
+	dr PlayCurrentMoveAnimation, $7b85
 
 
 SECTION "rom16", ROMX[$4000], BANK[16]
@@ -261,6 +244,7 @@ SECTION "rom21", ROMX[$4000], BANK[21]
 SECTION "rom22", ROMX[$4000], BANK[22]
 ; ROM $16 : $58000 - $5BFFF
 
+	dr CalcExperience, $4dc0
 	dr PrintStatusAilment, $4e8b
 
 
@@ -270,20 +254,6 @@ SECTION "rom22", ROMX[$4000], BANK[22]
 
 ;SECTION "rom24", ROMX[$4000], BANK[24]
 ; ROM $18 : $60000 - $63FFF
-
-
-;SECTION "rom25", ROMX[$4000], BANK[25]
-; ROM $19 : $64000 - $67FFF
-
-
-;SECTION "rom26", ROMX[$4000], BANK[26]
-; ROM $1a : $68000 - $6BFFF
-
-
-SECTION "rom27", ROMX[$4000], BANK[27]
-; ROM $1b : $6C000 - $6FFFF
-
-	dr Club_GFX, $7670
 
 
 SECTION "rom28", ROMX[$4000], BANK[28]
@@ -299,7 +269,10 @@ SECTION "rom28", ROMX[$4000], BANK[28]
 	dr AnimatePartyMon_ForceSpeed1, $5755
 	dr AnimatePartyMon, $575d
 	dr LoadMonPartySpriteGfx, $57ca
+	dr LoadMonPartySpriteGfxWithLCDDisabled, $57ef
+	dr WriteMonPartySpriteOAMByPartyIndex, $58d2
 	dr WriteMonPartySpriteOAMBySpecies, $5900
+	dr InitPartyMenuBlkPacket, $6150
 	dr _UpdateCGBPal_BGP, $64f5
 	dr _UpdateCGBPal_OBP, $653d
 	dr SaveGameData, $7b62
@@ -323,32 +296,26 @@ SECTION "rom29", ROMX[$4000], BANK[29]
 ; ROM $2f : $BC000 - $BFFFF
 
 
-;SECTION "rom57", ROMX[$4000], BANK[57]
-; ROM $39 : $E4000 - $E7FFF
-
-
 SECTION "rom58", ROMX[$4000], BANK[58]
 ; ROM $3a : $E8000 - $EBFFF
 
 	dr MonsterNames, $4000
+	dr IsPlayerJustOutsideMap, $476c
 	dr PrinterSerial_, $4a5e
 	dr PrinterDebug, $4e79
 	dr SetEnemyTrainerToStayAndFaceAnyDirection, $69d5
 
 
-SECTION "rom60", ROMX[$410c], BANK[60]
+SECTION "rom60", ROMX[$4f12], BANK[60]
 ; ROM $3c : $F0000 - $F3FFF
 
-	dr _AdvancePlayerSprite, $410c
-	dr ResetStatusAndHalveMoneyOnBlackout, $4274
-	dr SetMapSpecificScriptFlagsOnMapReload, $42da
-	dr LoadToggleableObjectData, $4a55
 	dr CheckForHiddenEvent, $653a
 
 
 SECTION "rom61", ROMX[$4000], BANK[61]
 ; ROM $3d : $F4000 - $F7FFF
 
+	dr DisplayLinkBattleVersusTextBox, $41cf
 	dr ModifyPikachuHappiness, $4316
 
 
@@ -359,10 +326,13 @@ SECTION "rom61_2", ROMX[$454b], BANK[61]
 	dr TitleScreen_PlacePikaSpeechBubble, $4591
 	dr TitleScreen_PlacePikachu, $45a6
 	dr LinkMenu, $580b
+	dr IsSurfingAllowed, $5b27
 	dr AddItemToInventory_, $5b6b
 	dr RemoveItemFromInventory_, $5bdb
 	dr TrainerInfoTextBoxTileGraphics, $5c1e
 	dr TrainerInfoTextBoxTileGraphicsEnd, $5cae
+	dr BlankLeaderNames, $5cae
+	dr BadgeNumbersTileGraphics, $5e1e
 	dr InitBattle, $5fec
 	dr CopyUncompressedPicToHL, $6203
 	dr GetMachinePrice, $65d4
@@ -386,8 +356,12 @@ SECTION "rom61_2", ROMX[$454b], BANK[61]
 	drp InitPlayerData2, $18
 	drp LoadTilesetHeader, $19
 	drp GetQuantityOfItemInBag, $1c
+	drp HPBarLength, $26
+	drp ShowPokedexMenu, $29
+	drp EvolutionAfterBattle, $2a
 	drp InitOpponent, $2c
 	drp CableClub_Run, $2d
+	drp DrawBadges, $2e
 	drp ExternalClockTradeAnim, $2f
 	drp PlayIntro, $32
 	drp GetTileAndCoordsInFrontOfPlayer, $35
@@ -396,16 +370,24 @@ SECTION "rom61_2", ROMX[$454b], BANK[61]
 	drp InternalClockTradeAnim, $38
 	drp TrainerEngage, $39
 	drp IndexToPokedex, $3a
+	drp DisplayPicCenteredOrUpperRight, $3b
+	drp UsedCut, $3c
 	drp ShowPokedexData, $3d
+	drp SaveMenu, $3f
 	drp LoadSGB, $40
+	drp CanLearnTM, $43
 	drp _RunPaletteCommand, $45
 	drp UpdateHPBar2, $48
 	drp DrawEnemyHUDAndHPBar, $49
+	drp PrintMonType, $4b
 	drp EmotionBubble, $4c
 	drp EmptyFunc, $4d
 	drp SavePartyAndDexData, $50
 	drp TryLoadSaveFile, $52
+	drp PrintStrengthText, $5b
 	drp PickUpItem, $5c
+	drp DrawHP, $5f
+	drp DrawHP2, $60
 
 
 ;SECTION "rom62", ROMX[$4000], BANK[62]
@@ -423,11 +405,15 @@ SECTION "rom63", ROMX[$4000], BANK[63]
 	dr SetPikachuSpawnWarpPad, $465b
 	dr SetPikachuSpawnBackOutside, $469a
 	dr SpawnPikachu_, $46d5
+	dr GetPikachuFacingDirectionAndReturnToE, $4b4d
+	dr RefreshPikachuFollow, $4ba1
 	dr Func_fcc08, $4c08
 	dr IsStarterPikachuAliveInOurParty, $4db8
+	dr IsThisBoxMonStarterPikachu, $4e0d
 	dr IsThisPartyMonStarterPikachu, $4e18
+	dr UpdatePikachuMoodAfterBattle, $4e5a
 	dr IsPlayerTalkingToPikachu, $4f0c
 	dr TalkToPikachu, $5004
 	dr PikachuWalksToNurseJoy, $5252
 	dr ApplyPikachuMovementData_, $52a1
-	dr SurfingPikachuSprite, $6def
+	dr LoadPikachuShadowIntoVRAM, $5831

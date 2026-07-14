@@ -356,28 +356,28 @@ PrintStatusCondition::
 PrintStatusConditionNotFainted::
 	homejp_sf PrintStatusAilment
 
-; function to print pokemon level, leaving off the ":L" if the level is at least 100
+; function to print pokemon level, leaving off the ":N" if the level is at least 100
 ; INPUT:
 ; hl = destination address
 ; [wLoadedMonLevel] = level
 PrintLevel::
-	ld a, '<LV>' ; ":L" tile ID
+	ld a, '<LV>' ; ":N" tile ID
 	ld [hli], a
 	ld c, 2 ; number of digits
 	ld a, [wLoadedMonLevel] ; level
 	cp 100
 	jr c, PrintLevelCommon
-; if level at least 100, write over the ":L" tile
+; if level at least 100, write over the ":N" tile
 	dec hl
 	inc c ; increment number of digits to 3
 	jr PrintLevelCommon
 
-; prints the level without leaving off ":L" regardless of level
+; prints the level without leaving off ":N" regardless of level
 ; INPUT:
 ; hl = destination address
 ; [wLoadedMonLevel] = level
 PrintLevelFull::
-	ld a, '<LV>' ; ":L" tile ID
+	ld a, '<LV>' ; ":N" tile ID
 	ld [hli], a
 	ld c, 3 ; number of digits
 	ld a, [wLoadedMonLevel] ; level

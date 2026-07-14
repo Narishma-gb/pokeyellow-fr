@@ -66,7 +66,7 @@
 
 	charmap "<LV>",      $6e
 
-	charmap "<to>",      $70 ; narrow "to"
+	charmap "→",         $70
 
 	charmap "『",         $72 ; Japanese opening quote, unused
 	charmap "<ID>",      $73
@@ -78,7 +78,7 @@
 	charmap "′",         $60 ; gfx/pokedex/pokedex.png
 	charmap "″",         $61 ; gfx/pokedex/pokedex.png
 
-	; needed for StatusScreen (see engine/pokemon/status_screen.asm)
+	; unused
 	charmap "<BOLD_P>",  $72 ; gfx/font/P.1bpp
 
 	; needed for LoadTownMap_Fly (see engine/items/town_map.asm)

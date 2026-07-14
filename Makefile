@@ -7,13 +7,13 @@ rom_obj := \
 	ram.o \
 	text.o \
 	wip.o \
-	gfx/pics.o
+	gfx/pics.o \
+	gfx/pikachu.o \
+	gfx/sprites.o \
+	gfx/surfing_pikachu.o \
+	gfx/tilesets.o
 # 	main.o \
 # 	maps.o \
-# 	gfx/pikachu.o \
-# 	gfx/sprites.o \
-# 	gfx/surfing_pikachu.o \
-# 	gfx/tilesets.o
 
 pokeyellow_obj       := $(rom_obj)
 pokeyellow_vc_obj    := $(rom_obj:.o=_vc.o)

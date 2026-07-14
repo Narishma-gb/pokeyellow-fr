@@ -86,7 +86,7 @@ StatusScreen:
 	ld de, BattleHudTiles1  ; source
 	ld hl, vChars2 tile $6d ; dest
 	lb bc, BANK(BattleHudTiles1), 3
-	call CopyVideoDataDouble ; ·│ :L and halfarrow line end
+	call CopyVideoDataDouble ; ·│ :N and halfarrow line end
 	ld de, BattleHudTiles2
 	ld hl, vChars2 tile $78
 	lb bc, BANK(BattleHudTiles2), 1
@@ -98,7 +98,7 @@ StatusScreen:
 	ld de, PTile
 	ld hl, vChars2 tile $72
 	lb bc, BANK(PTile), 1
-	call CopyVideoDataDouble ; bold P (for PP)
+	call CopyVideoDataDouble ; bold P (unused)
 	ldh a, [hTileAnimations]
 	push af
 	xor a
@@ -133,7 +133,7 @@ StatusScreen:
 .StatusWritten
 	hlcoord 9, 6
 	ld de, StatusText
-	call PlaceString ; "STATUS/"
+	call PlaceString ; "STATUT/"
 	hlcoord 14, 2
 	call PrintLevel
 	ld a, [wMonHIndex]
@@ -222,12 +222,12 @@ NamePointers2:
 TypesIDNoOTText:
 	db   "TYPE1/"
 	next "TYPE2/"
-	next "<ID>№/"
-	next "OT/"
+	next "№<ID>/"
+	next "DO/"
 	next "@"
 
 StatusText:
-	db "STATUS/@"
+	db "STATUT/@"
 
 OKText:
 	db "OK@"
@@ -296,10 +296,10 @@ PrintStatsBox:
 	ret
 
 .StatsText:
-	db   "ATTACK"
-	next "DEFENSE"
-	next "SPEED"
-	next "SPECIAL@"
+	db   "FOR"
+	next "DEF"
+	next "VIT"
+	next "SPE@"
 
 StatusScreen2:
 	ldh a, [hTileAnimations]
@@ -334,7 +334,7 @@ StatusScreen2:
 	ld b, a ; number of blank moves
 	hlcoord 11, 10
 	ld de, SCREEN_WIDTH * 2
-	ld a, '<BOLD_P>'
+	ld a, 'P'
 	call StatusScreen_PrintPP ; Print "PP"
 	ld a, b
 	and a
@@ -405,7 +405,7 @@ StatusScreen2:
 	ld [wLoadedMonLevel], a ; Increase temporarily if not 100
 .Level100
 	hlcoord 14, 6
-	ld [hl], '<to>'
+	ld [hl], '→'
 	inc hl
 	inc hl
 	call PrintLevel
@@ -472,8 +472,8 @@ CalcExpToLevelUp:
 	ret
 
 StatusScreenExpText:
-	db   "EXP POINTS"
-	next "LEVEL UP@"
+	db   "PTS EXP."
+	next "PROCH.NIV.@"
 
 StatusScreen_ClearName:
 	ld bc, NAME_LENGTH - 1
@@ -487,4 +487,14 @@ StatusScreen_PrintPP:
 	add hl, de
 	dec c
 	jr nz, StatusScreen_PrintPP
+	ret
+
+StatusScreen_PrintAP: ; unreferenced
+	ld a, 'A'
+	ld [hli], a
+	ld a, 'P'
+	ld [hld], a
+	add hl, de
+	dec c
+	jr nz, StatusScreen_PrintAP
 	ret
