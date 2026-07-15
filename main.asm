@@ -264,6 +264,7 @@ SECTION "Version Graphics", ROMX
 
 INCLUDE "gfx/version.asm"
 
+
 SECTION "bank1C", ROMX
 
 INCLUDE "engine/movie/splash.asm"

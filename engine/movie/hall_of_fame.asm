@@ -254,7 +254,7 @@ HoFDisplayPlayerStats:
 	ld de, wPlayerMoney
 	ld c, 3 | LEADING_ZEROES
 	call PrintBCDNumber
-	ld [hl], $f0
+	ld [hl], '¥'
 	ld hl, DexSeenOwnedText
 	call HoFPrintTextAndDelay
 	ld hl, DexRatingText

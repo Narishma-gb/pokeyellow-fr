@@ -511,33 +511,6 @@ SECTION "rom23", ROMX[$4000], BANK[23]
 ; ROM $18 : $60000 - $63FFF
 
 
-;SECTION "rom25", ROMX[$4000], BANK[25]
-; ROM $19 : $64000 - $67FFF
-
-
-;SECTION "rom26", ROMX[$4000], BANK[26]
-; ROM $1a : $68000 - $6BFFF
-
-
-;SECTION "rom28", ROMX[$41c6], BANK[28]
-; ROM $1c : $70000 - $73FFF
-
-	; dr AnimateHealingMachine, $448c
-	; dr EnterMapAnim, $4568
-	; dr _LeaveMapAnim, $4616
-	; dr IsPlayerStandingOnWarpPadOrHole, $47e8
-	; dr _HandleMidJump, $48e0
-	; dr LoadTownMap_Fly, $5017
-	; dr TownMapSpriteBlinkingAnimation, $5724
-	; dr AnimatePartyMon_ForceSpeed1, $5755
-	; dr AnimatePartyMon, $575d
-	; dr LoadMonPartySpriteGfx, $57ca
-	; dr WriteMonPartySpriteOAMBySpecies, $5900
-	; dr _UpdateCGBPal_BGP, $64f5
-	; dr _UpdateCGBPal_OBP, $653d
-	; dr SaveGameData, $7b62
-
-
 SECTION "rom29", ROMX[$4000], BANK[29]
 ; ROM $1d : $74000 - $77FFF
 

@@ -129,8 +129,6 @@ LoadTownMap_Nest:
 	push hl
 	call DisplayWildLocations
 	call GetMonName
-	; FR version: modification from english's "'S NEST" display order
-	; instead of writing "<mon name>'S NEST", french uses "NID DE <mon name>" 
 	hlcoord 8, 0
 	call PlaceString
 	hlcoord 1, 0
@@ -261,7 +259,7 @@ LoadTownMap_Fly::
 	jr .pressedDown
 
 ToText:
-	db " ‘@"
+	db " →@"
 
 BuildFlyLocationsList:
 	ld hl, wFlyAnimUsingCoordList
