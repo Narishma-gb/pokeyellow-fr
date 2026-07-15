@@ -50,7 +50,7 @@ ROMX $4
 ROMX $5
 	"bank5"
 	"NPC Sprites 2"
-; 	"Battle Engine 2"
+	"Battle Engine 2"
 ; ROMX $6
 ; 	"Maps 1"
 ; 	"Maps 2"
@@ -65,24 +65,23 @@ ROMX $8
 	"Music Headers 2"
 	"Sound Effects 2"
 	"Low Health Alarm (Audio Engine 2)"
-; 	"Bill's PC"
-	org $58bc
+	"Bill's PC"
 	"Audio Engine 2"
 	"Music 2"
 ROMX $9
 	"Pics 1"
-; 	"Battle Engine 3"
+	"Battle Engine 3"
 ROMX $A
 	"Pics 2"
-; 	"Battle Engine 4"
+	"Battle Engine 4"
 ROMX $B
 	"Pics 3"
-; 	"Battle Engine 5"
+	"Battle Engine 5"
 ROMX $C
 	"Pics 4"
 ROMX $D
 	"Pics 5"
-; 	"Slot Machines"
+	"Slot Machines"
 ; ROMX $E
 ; 	"Battle Engine 6"
 ; ROMX $F

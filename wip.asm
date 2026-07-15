@@ -53,15 +53,10 @@ EXPORT DEF UnusedPredefText EQU $66e0
 EXPORT DEF PokemonCenterPCText EQU $6701
 EXPORT DEF ViridianSchoolNotebook EQU $690f
 EXPORT DEF ViridianSchoolBlackboard EQU $5d41
-EXPORT DEF JustAMomentText EQU $58a8
-EXPORT DEF OpenBillsPCText EQU $58bb
 EXPORT DEF FoundHiddenItemText EQU $6045
 EXPORT DEF HiddenItemBagFullText EQU $607e
 EXPORT DEF VermilionGymTrashText EQU $5e49
 EXPORT DEF IndigoPlateauHQText EQU $69a2
-EXPORT DEF GameCornerOutOfOrderText EQU $7f1d
-EXPORT DEF GameCornerOutToLunchText EQU $7f22
-EXPORT DEF GameCornerSomeonesKeysText EQU $7f27
 EXPORT DEF FoundHiddenCoinsText EQU $6138
 EXPORT DEF DroppedHiddenCoinsText EQU $613e
 EXPORT DEF BillsHouseMonitorText EQU $65bb
@@ -69,8 +64,6 @@ EXPORT DEF BillsHouseInitiatedText EQU $65c0
 EXPORT DEF BillsHousePokemonList EQU $65de
 EXPORT DEF MagazinesText EQU $6547
 EXPORT DEF CinnabarGymQuiz EQU $63c0
-EXPORT DEF GameCornerNoCoinsText EQU $7e2b
-EXPORT DEF GameCornerCoinCaseText EQU $7e26
 EXPORT DEF LinkCableHelp EQU $5c82
 EXPORT DEF TMNotebook EQU $6909
 EXPORT DEF FightingDojoText EQU $698f
@@ -324,12 +317,6 @@ EXPORT DEF SCRIPT_SEAFOAMISLANDSB4F_MOVE_OBJECT EQU 2
 INCLUDE "main.asm"
 
 
-SECTION "rom5", ROMX[$7cb0], BANK[5]
-; ROM $05 : $14000 - $17FFF
-
-	dr ActivatePC, $7cb0
-
-
 SECTION "rom6", ROMX[$4000], BANK[6]
 ; ROM $06 : $18000 - $1BFFF
 
@@ -348,48 +335,11 @@ SECTION "rom7", ROMX[$4000], BANK[7]
 
 	dr DoClearSaveDialogue, $421e
 	dr DisplayElevatorFloorMenu, $4264
+	dr OpenOaksPC, $62b1
 	dr SafariZoneCheck, $6324
 	dr SafariZoneCheckSteps, $6333
 	dr PrintSafariGameOverText, $6388
 	dr UpdateCinnabarGymGateTileBlocks_, $64c2
-
-
-SECTION "rom8", ROMX[$5472], BANK[8]
-; ROM $08 : $20000 - $23FFF
-
-	dr BillsPC_, $5472
-
-
-SECTION "rom9", ROMX[$7d20], BANK[9]
-; ROM $09 : $24000 - $27FFF
-
-	dr PrintMonType, $7d20
-	dr PrintMoveType, $7d4d
-	dr SaveTrainerName, $7dfc
-
-
-SECTION "rom10", ROMX[$7d4c], BANK[10]
-; ROM $0a : $28000 - $2BFFF
-
-	dr ChangeBGPalColor0_4Frames, $7d4c
-	dr PredefShakeScreenVertically, $7d67
-	dr PredefShakeScreenHorizontally, $7d8d
-
-
-SECTION "rom11", ROMX[$7d42], BANK[11]
-; ROM $0b : $2C000 - $2FFFF
-
-	dr CheckIfMoveIsKnown, $7d42
-	dr RespawnOverworldPikachu, $7d6a
-	dr ScaleSpriteByTwo, $7d79
-
-
-;SECTION "rom12", ROMX[$4000], BANK[12]
-; ROM $0c : $30000 - $33FFF
-
-
-;SECTION "rom13", ROMX[$4000], BANK[13]
-; ROM $0d : $34000 - $37FFF
 
 
 SECTION "rom14", ROMX[$4000], BANK[14]
@@ -516,6 +466,7 @@ SECTION "rom29", ROMX[$4000], BANK[29]
 
 	dr HiddenItemNear, $405c
 	dr VendingMachineMenu, $4721
+	dr PKMNLeaguePC, $5df3
 
 
 ;SECTION "rom32", ROMX[$4000], BANK[32]
@@ -534,6 +485,7 @@ SECTION "rom58", ROMX[$4000], BANK[58]
 	dr MonsterNames, $4000
 	dr IsPlayerJustOutsideMap, $476c
 	dr PrinterSerial_, $4a5e
+	dr PrintPCBox, $4d35
 	dr PrinterDebug, $4e79
 	dr SetEnemyTrainerToStayAndFaceAnyDirection, $69d5
 
@@ -577,4 +529,3 @@ SECTION "rom63", ROMX[$4000], BANK[63]
 	dr PikachuWalksToNurseJoy, $5252
 	dr ApplyPikachuMovementData_, $52a1
 	dr LoadPikachuShadowIntoVRAM, $5831
-	

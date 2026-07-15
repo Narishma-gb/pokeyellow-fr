@@ -91,13 +91,13 @@ SECTION "bank5", ROMX
 INCLUDE "engine/gfx/load_pokedex_tiles.asm"
 INCLUDE "engine/overworld/map_sprites.asm"
 
-/*
+
 SECTION "Battle Engine 2", ROMX
 
 INCLUDE "engine/battle/move_effects/substitute.asm"
 INCLUDE "engine/menus/pc.asm"
 
-
+/*
 SECTION "Doors and Ledges", ROMX
 
 INCLUDE "engine/overworld/auto_movement.asm"
@@ -121,7 +121,7 @@ INCLUDE "engine/events/hidden_events/cinnabar_gym_quiz.asm"
 INCLUDE "engine/events/hidden_events/magazines.asm"
 INCLUDE "engine/events/hidden_events/bills_house_pc.asm"
 INCLUDE "engine/events/hidden_events/oaks_lab_email.asm"
-
+*/
 
 SECTION "Bill's PC", ROMX
 
@@ -155,7 +155,7 @@ INCLUDE "engine/movie/title_rb.asm"
 INCLUDE "engine/slots/slot_machine.asm"
 INCLUDE "engine/slots/game_corner_slots.asm"
 
-
+/*
 SECTION "Battle Engine 6", ROMX
 
 INCLUDE "data/moves/moves.asm"
