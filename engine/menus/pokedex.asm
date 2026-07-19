@@ -481,8 +481,8 @@ ShowPokedexDataInternal:
 	ret
 
 HeightWeightText:
-	db   "TAI  ???<M>"
-	next "PDS  ???<K><G>@"
+	db   "TAI  ???<m>"
+	next "PDS  ???<k><g>@"
 
 ; leftover from JPN Pokedex, where species have the suffix "Pokemon"
 PokeText: ; unreferenced
