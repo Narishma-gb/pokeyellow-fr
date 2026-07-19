@@ -192,20 +192,6 @@ EXPORT DEF SCRIPT_SAFARIZONEGATE_LEAVING_SAFARI     EQU 5
 INCLUDE "main.asm"
 
 
-SECTION "rom16", ROMX[$4000], BANK[16]
-; ROM $10 : $40000 - $43FFF
-
-	dr ShowPokedexMenu, $4000
-	dr ShowPokedexData, $4310
-	dr PokedexEntryPointers, $4508
-	dr IndexToPokedex, $5022
-	dr EmotionBubble, $50f4
-	dr InternalClockTradeAnim, $536a
-	dr ExternalClockTradeAnim, $537b
-	dr PlayIntro, $591c
-	dr DisplayOptionMenu_, $5bf5
-
-
 SECTION "rom20", ROMX[$4000], BANK[20]
 ; ROM $14 : $50000 - $53FFF
 
@@ -294,6 +280,7 @@ SECTION "rom58", ROMX[$4000], BANK[58]
 	dr MonsterNames, $4000
 	dr IsPlayerJustOutsideMap, $476c
 	dr PrinterSerial_, $4a5e
+	dr PrintPokedexEntry, $4b74
 	dr PrintSurfingMinigameHighScore, $4c5c
 	dr PrintDiploma, $4cb1
 	dr PrintPCBox, $4d35
@@ -322,6 +309,7 @@ SECTION "rom62", ROMX[$4000], BANK[62]
 ; ROM $3e : $F8000 - $FBFFF
 
 	dr SurfingPikachuMinigame, $4000
+    dr PlayIntroScene, $582a
 
 
 SECTION "rom63", ROMX[$4000], BANK[63]

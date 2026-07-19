@@ -100,7 +100,7 @@ OptionsMenu_TextSpeed:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 14, 2
+	hlcoord 3, 3
 	call PlaceString
 	and a ; clear carry flag
 	ret
@@ -111,9 +111,9 @@ OptionsMenu_TextSpeed:
 	dw .Mid
 	dw .Slow
 
-.Fast: db "FAST@"
-.Mid:  db "MID @"
-.Slow: db "SLOW@"
+.Fast: db "[ RAPIDE  ]@"
+.Mid:  db "[ MOYENNE ]@"
+.Slow: db "[ LENTE   ]@"
 
 ; Loads the value of the current selection in c
 ; Loads the text delay value of the options
@@ -162,7 +162,7 @@ OptionsMenu_BattleAnimations:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 14, 4
+	hlcoord 3, 5
 	call PlaceString
 	and a ; clear carry flag
 	ret
@@ -171,8 +171,8 @@ OptionsMenu_BattleAnimations:
 	dw .On
 	dw .Off
 
-.On:  db "ON @"
-.Off: db "OFF@"
+.On:  db "[ OUI ]@"
+.Off: db "[ NON ]@"
 
 OptionsMenu_BattleStyle:
 	ldh a, [hJoy5]
@@ -198,7 +198,7 @@ OptionsMenu_BattleStyle:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 14, 6
+	hlcoord 3, 7
 	call PlaceString
 	and a ; clear carry flag
 	ret
@@ -207,8 +207,8 @@ OptionsMenu_BattleStyle:
 	dw .Shift
 	dw .Set
 
-.Shift: db "SHIFT@"
-.Set:   db "SET  @"
+.Shift: db "[ CHOIX  ]@"
+.Set:   db "[ DEFINI ]@"
 
 OptionsMenu_SpeakerSettings:
 	ld a, [wOptions]
@@ -252,7 +252,7 @@ OptionsMenu_SpeakerSettings:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 8, 8
+	hlcoord 3, 9
 	call PlaceString
 	and a ; clear carry flag
 	ret
@@ -263,10 +263,10 @@ OptionsMenu_SpeakerSettings:
 	dw .Earphone2
 	dw .Earphone3
 
-.Mono:      db "MONO     @"
-.Earphone1: db "EARPHONE1@"
-.Earphone2: db "EARPHONE2@"
-.Earphone3: db "EARPHONE3@"
+.Mono:      db "[ MONO     ]@"
+.Earphone1: db "[ CASQUE 1 ]@"
+.Earphone2: db "[ CASQUE 2 ]@"
+.Earphone3: db "[ CASQUE 3 ]@"
 
 	const_def
 	const OPT_PRINTER_LIGHTEST ; 0
@@ -316,7 +316,7 @@ OptionsMenu_GBPrinterBrightness:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 8, 10
+	hlcoord 3, 11
 	call PlaceString
 	and a ; clear carry flag
 	ret
@@ -328,11 +328,11 @@ OptionsMenu_GBPrinterBrightness:
 	dw .Darker
 	dw .Darkest
 
-.Lightest: db "LIGHTEST@"
-.Lighter:  db "LIGHTER @"
-.Normal:   db "NORMAL  @"
-.Darker:   db "DARKER  @"
-.Darkest:  db "DARKEST @"
+.Lightest: db "[ CLAIR MAX   ]@"
+.Lighter:  db "[ PLUS CLAIR  ]@"
+.Normal:   db "[ NORMAL      ]@"
+.Darker:   db "[ PLUS SOMBRE ]@"
+.Darkest:  db "[ SOMBRE MAX  ]@"
 
 ; Loads the value of the current selection in c
 ; Loads the brightness value of the options
@@ -473,11 +473,11 @@ InitOptionsMenu:
 	ret
 
 AllOptionsText:
-	db   "TEXT SPEED :"
-	next "ANIMATION  :"
-	next "BATTLESTYLE:"
-	next "SOUND:"
-	next "PRINT:@"
+	db   "VITESSE TEXTE"
+	next "ANIMATION COMBAT "
+	next "STYLE COMBAT"
+	next "SON"
+	next "IMPRIMER@"
 
 OptionMenuCancelText:
-	db "CANCEL@"
+	db "RETOUR@"

@@ -336,20 +336,20 @@ DrawPokedexVerticalLine:
 	ret
 
 PokedexSeenText:
-	db "SEEN@"
+	db "VUS@"
 
 PokedexOwnText:
-	db "OWN@"
+	db "PRIS@"
 
 PokedexContentsText:
-	db "CONTENTS@"
+	db "SOMMAIRE@"
 
 PokedexMenuItemsText:
-	db   "DATA"
-	next "CRY"
-	next "AREA"
-	next "PRNT"
-	next "QUIT@"
+	db   "INFO"
+	next "CRI"
+	next "ZONE"
+	next "IMP"
+	next "RET@"
 
 Pokedex_PlacePokemonList:
 	xor a
@@ -481,8 +481,8 @@ ShowPokedexDataInternal:
 	ret
 
 HeightWeightText:
-	db   "HT  ?′??″"
-	next "WT   ???lb@"
+	db   "TAI  ???<M>"
+	next "PDS  ???<K><G>@"
 
 ; leftover from JPN Pokedex, where species have the suffix "Pokemon"
 PokeText: ; unreferenced
@@ -596,21 +596,23 @@ DrawDexEntryOnScreen:
 	and a
 	ret z ; if the pokemon has not been owned, don't print the height, weight, or description
 
-	inc de ; de = address of feet (height)
-	ld a, [de] ; reads feet, but a is overwritten without being used
-	hlcoord 12, 6
-	lb bc, 1, 2
-	call PrintNumber ; print feet (height)
-	ld a, '′'
-	ld [hl], a
-	inc de
-	inc de ; de = address of inches (height)
-	hlcoord 15, 6
-	lb bc, LEADING_ZEROES | 1, 2
-	call PrintNumber ; print inches (height)
-	ld a, '″'
-	ld [hl], a
-; now print the weight (note that weight is stored in tenths of pounds internally)
+	inc de ; de = address of decimetre (height)
+	ld a, [de] ; reads decimetre, but a is overwritten without being used
+	push af
+	hlcoord 13, 6
+	lb bc, 1, 3
+	call PrintNumber ; print decimetre (height)
+	hlcoord 14, 6
+    pop af
+    cp $a
+    jr nc, .heightNext
+    ld [hl], '0'
+.heightNext:
+    inc hl
+    ld a, [hli]
+    ld [hld], a ; make space for the decimal point by moving the last digit forward one tile
+    ld [hl], '<DOT>' ; decimal point tile
+; now print the weight (note that weight is stored in tenths of kilograms internally)	inc de
 	inc de
 	inc de
 	inc de ; de = address of upper byte of weight
@@ -627,8 +629,8 @@ DrawDexEntryOnScreen:
 	ld a, [de] ; a = lower byte of weight
 	ld [hl], a ; store lower byte of weight in [hDexWeight + 1]
 	ld de, hDexWeight
-	hlcoord 11, 8
-	lb bc, 2, 5 ; 2 bytes, 5 digits
+	hlcoord 12, 8
+	lb bc, 2, 4 ; 2 bytes, 4 digits
 	call PrintNumber ; print weight
 	hlcoord 14, 8
 	ldh a, [hDexWeight + 1]

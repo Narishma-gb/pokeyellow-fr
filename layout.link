@@ -86,8 +86,8 @@ ROMX $E
 	"Battle Engine 6"
 ROMX $F
 	"Battle Core"
-; ROMX $10
-; 	"bank10"
+ROMX $10
+ 	"bank10"
 ROMX $11
 	"Maps 5"
 	"Pokédex Rating"
