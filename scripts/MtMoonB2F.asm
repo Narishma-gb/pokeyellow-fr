@@ -74,10 +74,6 @@ MtMoonB2F_ScriptPointers:
 	dw_const MtMoonB2FScript15,                        SCRIPT_MTMOONB2F_SCRIPT15
 
 MtMoonB2FDefaultScript:
-IF DEF(_DEBUG)
-	call DebugPressedOrHeldB
-	ret nz
-ENDC
 	CheckEitherEventSet EVENT_GOT_DOME_FOSSIL, EVENT_GOT_HELIX_FOSSIL
 	call z, MtMoonB2FScript_49d28
 	CheckEvent EVENT_BEAT_MT_MOON_3_JESSIE_JAMES

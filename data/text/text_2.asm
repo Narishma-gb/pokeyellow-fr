@@ -18,11 +18,11 @@ _AIBattleUseItemText::
 	text "!"
 	prompt
 
-_BoxFullDebugText::
+_BoxFullDebugText:: ; unreferenced
 	text "BOITE pleine!"
 	done
 
-_BoxWillBeClearedText::
+_BoxWillBeClearedText:: ; unreferenced
 	text "La BOITE sera"
 	line "vidée."
 	done

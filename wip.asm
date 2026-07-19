@@ -300,6 +300,7 @@ SECTION "rom60_2", ROMX[$635a], BANK[60]
 	dr BillsHousePrintBillPokemonText, $635a
 	dr BillsHousePrintBillSSTicketText, $638c
 	dr BillsHousePrintBillCheckOutMyRarePokemonText, $63e4
+	dr BillsHouse_CheckPikachuEmotion, $63f0
 	dr BillsHousePikachuConfused, $6417
 	dr BillsHousePikachuWatchPlayer, $644d
 	dr CheckForHiddenEvent, $653a
@@ -318,27 +319,12 @@ SECTION "rom63", ROMX[$4000], BANK[63]
 	dr MapSongBanks, $4000
 	dr MapHeaderPointers, $41f2
 	dr MapHeaderBanks, $43e4
-	dr SchedulePikachuSpawnForAfterText, $44fa
-	dr SetPikachuSpawnOutside, $45fa
-	dr SetPikachuSpawnWarpPad, $465b
-	dr SetPikachuSpawnBackOutside, $469a
-	dr SpawnPikachu_, $46d5
-	dr IsPikachuRightNextToPlayer, $4b01
-	dr GetPikachuFacingDirectionAndReturnToE, $4b4d
-	dr RefreshPikachuFollow, $4ba1
-	dr Func_fcc08, $4c08
-	dr IsStarterPikachuAliveInOurParty, $4db8
-	dr IsThisBoxMonStarterPikachu, $4e0d
-	dr IsThisPartyMonStarterPikachu, $4e18
-	dr UpdatePikachuMoodAfterBattle, $4e5a
-	dr CheckPikachuStatusCondition, $4e73
-	dr IsPlayerTalkingToPikachu, $4f0c
-	dr InitializePikachuTextID, $4f20
-	dr PlaySpecificPikachuEmotion, $5001
-	dr TalkToPikachu, $5004
-	dr PikachuEmotionTable, $5019
-	dr PikachuEmotion26_id, $504d
-	dr IsPlayerPikachuAsleepInParty, $50d0
-	dr PikachuWalksToNurseJoy, $5252
-	dr ApplyPikachuMovementData_, $52a1
-	dr LoadPikachuShadowIntoVRAM, $5831
+
+SECTION "rom63_2", ROMX[$44dd], BANK[63]
+
+INCLUDE "engine/pikachu/pikachu_follow.asm"
+INCLUDE "engine/pikachu/pikachu_status.asm"
+INCLUDE "engine/pikachu/pikachu_emotions.asm"
+INCLUDE "engine/pikachu/pikachu_movement.asm"
+INCLUDE "engine/pikachu/pikachu_pic_animation.asm"
+INCLUDE "engine/debug/debug_menu.asm"

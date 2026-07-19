@@ -431,7 +431,7 @@ _AccessedOaksPCText::
 	cont "#DEX."
 	prompt
 
-_ExpressionText::
+_ExpressionText:: ; unreferenced
 	text "Expression"
 	line "No. @"
 	text_decimal wExpressionNumber, 1, 2

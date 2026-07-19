@@ -70,10 +70,6 @@ RocketHideoutB4FBeatGiovanniScript:
 	ret
 
 RocketHideoutB4FDefaultScript:
-IF DEF(_DEBUG)
-	call DebugPressedOrHeldB
-	ret nz
-ENDC
 	CheckEvent EVENT_BEAT_ROCKET_HIDEOUT_4_JESSIE_JAMES
 	call z, RocketHideoutB4FScript_455a5
 	CheckEvent EVENT_BEAT_ROCKET_HIDEOUT_4_TRAINER_2
