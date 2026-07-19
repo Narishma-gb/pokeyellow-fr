@@ -612,7 +612,7 @@ DrawDexEntryOnScreen:
     ld a, [hli]
     ld [hld], a ; make space for the decimal point by moving the last digit forward one tile
     ld [hl], '<DOT>' ; decimal point tile
-; now print the weight (note that weight is stored in tenths of kilograms internally)	inc de
+; now print the weight (note that weight is stored in tenths of kilograms internally)
 	inc de
 	inc de
 	inc de ; de = address of upper byte of weight
