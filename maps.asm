@@ -245,7 +245,7 @@ INCLUDE "scripts/BillsHouse.asm"
 INCLUDE "data/maps/objects/BillsHouse.asm"
 BillsHouse_Blocks: INCBIN "maps/BillsHouse.blk"
 
-/*
+
 SECTION "Maps 5", ROMX
 
 INCLUDE "data/maps/headers/LavenderTown.asm"
@@ -588,7 +588,7 @@ INCLUDE "scripts/Colosseum.asm"
 INCLUDE "data/maps/objects/Colosseum.asm"
 Colosseum_Blocks: INCBIN "maps/Colosseum.blk"
 
-
+/*
 SECTION "Maps 10", ROMX
 
 INCLUDE "data/maps/headers/Route22.asm"
@@ -1233,23 +1233,23 @@ INCLUDE "scripts/Route22_2.asm"
 INCLUDE "scripts/RedsHouse1F_2.asm"
 INCLUDE "scripts/OaksLab_2.asm"
 INCLUDE "scripts/ViridianSchoolHouse_2.asm"
-;INCLUDE "scripts/Museum1F_2.asm"
-;INCLUDE "scripts/PewterPokecenter_2.asm"
-;INCLUDE "scripts/PokemonTower2F_2.asm"
-;INCLUDE "scripts/CeladonMart3F_2.asm"
-;INCLUDE "scripts/CeladonMansion1F_2.asm"
-;INCLUDE "scripts/CeladonMansion3F_2.asm"
-;INCLUDE "scripts/GameCorner_2.asm"
-;INCLUDE "scripts/CeladonDiner_2.asm"
-;INCLUDE "scripts/SafariZoneGate_2.asm"
-;INCLUDE "scripts/CinnabarGym_3.asm"
-;INCLUDE "scripts/MtMoonPokecenter_2.asm"
+INCLUDE "scripts/Museum1F_2.asm"
+INCLUDE "scripts/PewterPokecenter_2.asm"
+INCLUDE "scripts/PokemonTower2F_2.asm"
+INCLUDE "scripts/CeladonMart3F_2.asm"
+INCLUDE "scripts/CeladonMansion1F_2.asm"
+INCLUDE "scripts/CeladonMansion3F_2.asm"
+INCLUDE "scripts/GameCorner_2.asm"
+INCLUDE "scripts/CeladonDiner_2.asm"
+INCLUDE "scripts/SafariZoneGate_2.asm"
+INCLUDE "scripts/CinnabarGym_3.asm"
+INCLUDE "scripts/MtMoonPokecenter_2.asm"
 
-;INCLUDE "data/maps/headers/SummerBeachHouse.asm"
-;INCLUDE "scripts/SummerBeachHouse.asm"
-;SummerBeachHouse_Blocks: INCBIN "maps/SummerBeachHouse.blk"
-;INCLUDE "data/maps/objects/SummerBeachHouse.asm"
-;INCLUDE "scripts/SummerBeachHouse_2.asm"
+INCLUDE "data/maps/headers/SummerBeachHouse.asm"
+INCLUDE "scripts/SummerBeachHouse.asm"
+SummerBeachHouse_Blocks: INCBIN "maps/SummerBeachHouse.blk"
+INCLUDE "data/maps/objects/SummerBeachHouse.asm"
+INCLUDE "scripts/SummerBeachHouse_2.asm"
 
 ;INCLUDE "scripts/BillsHouse_2.asm"
 ;INCLUDE "scripts/ViridianForest_2.asm"
