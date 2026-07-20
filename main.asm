@@ -215,7 +215,7 @@ INCLUDE "engine/events/diploma.asm"
 SECTION "Trainer Sight", ROMX
 
 INCLUDE "engine/overworld/trainer_sight.asm"
-
+*/
 
 SECTION "bank16", ROMX
 
@@ -228,7 +228,7 @@ SECTION "Saffron Guards", ROMX
 
 INCLUDE "engine/events/saffron_guards.asm"
 
-
+/*
 SECTION "Starter Dex", ROMX
 
 INCLUDE "engine/events/starter_dex.asm"

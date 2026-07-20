@@ -108,11 +108,11 @@ ROMX $13
 ; 	"Maps 12"
 ; 	"Diploma"
 ; 	"Trainer Sight"
-; ROMX $16
-; 	"Maps 13"
-; 	"bank16"
-; 	"Maps 14"
-; 	"Saffron Guards"
+ROMX $16
+	"Maps 13"
+	"bank16"
+	"Maps 14"
+	"Saffron Guards"
 ; ROMX $17
 ; 	"Maps 15"
 ; 	"Starter Dex"

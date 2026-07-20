@@ -96,11 +96,6 @@ EXPORT DEF POKEMONTOWER6F_X_ACCURACY                EQU $05
 EXPORT DEF POKEMONTOWER7F_JESSIE                    EQU $01
 EXPORT DEF POKEMONTOWER7F_JAMES                     EQU $02
 EXPORT DEF POKEMONTOWER7F_MR_FUJI                   EQU $03
-EXPORT DEF ROUTE12_SNORLAX                          EQU $01
-EXPORT DEF ROUTE12_TM_PAY_DAY                       EQU $09
-EXPORT DEF ROUTE12_IRON                             EQU $0a
-EXPORT DEF ROUTE15_TM_RAGE                          EQU $0b
-EXPORT DEF ROUTE16_SNORLAX                          EQU $07
 EXPORT DEF ROUTE2_MOON_STONE                        EQU $01
 EXPORT DEF ROUTE2_HP_UP                             EQU $02
 EXPORT DEF ROUTE22_RIVAL1                           EQU $01
@@ -125,25 +120,11 @@ EXPORT DEF SAFFRONCITY_PIDGEOT                      EQU $0c
 EXPORT DEF SAFFRONCITY_ROCKER                       EQU $0d
 EXPORT DEF SAFFRONCITY_ROCKET8                      EQU $0e
 EXPORT DEF SAFFRONCITY_ROCKET9                      EQU $0f
-EXPORT DEF SILPHCO10F_ROCKET                        EQU $01
-EXPORT DEF SILPHCO10F_SCIENTIST                     EQU $02
-EXPORT DEF SILPHCO10F_SILPH_WORKER_F                EQU $03
-EXPORT DEF SILPHCO10F_TM_EARTHQUAKE                 EQU $04
-EXPORT DEF SILPHCO10F_RARE_CANDY                    EQU $05
-EXPORT DEF SILPHCO10F_CARBOS                        EQU $06
 EXPORT DEF SILPHCO11F_GIOVANNI                      EQU $03
 EXPORT DEF SILPHCO11F_JAMES                         EQU $04
 EXPORT DEF SILPHCO11F_ROCKET                        EQU $05
 EXPORT DEF SILPHCO11F_JESSIE                        EQU $06
 EXPORT DEF SILPHCO1F_LINK_RECEPTIONIST              EQU $01
-EXPORT DEF SILPHCO2F_SILPH_WORKER_F                 EQU $01
-EXPORT DEF SILPHCO2F_SCIENTIST1                     EQU $02
-EXPORT DEF SILPHCO2F_SCIENTIST2                     EQU $03
-EXPORT DEF SILPHCO2F_ROCKET1                        EQU $04
-EXPORT DEF SILPHCO2F_ROCKET2                        EQU $05
-EXPORT DEF SILPHCO3F_ROCKET                         EQU $02
-EXPORT DEF SILPHCO3F_SCIENTIST                      EQU $03
-EXPORT DEF SILPHCO3F_HYPER_POTION                   EQU $04
 EXPORT DEF SILPHCO7F_ROCKET1                        EQU $05
 EXPORT DEF SILPHCO7F_SCIENTIST                      EQU $06
 EXPORT DEF SILPHCO7F_ROCKET2                        EQU $07
@@ -230,24 +211,6 @@ SECTION "rom21", ROMX[$4000], BANK[21]
 	dr TrainerEngage, $685b
 
 
-SECTION "rom22", ROMX[$4000], BANK[22]
-; ROM $16 : $58000 - $5BFFF
-
-	dr Route6_Blocks, $4079
-	dr Route8_Blocks, $41c6
-	dr Route10_Blocks, $4356
-	dr Route11_Blocks, $455f
-	dr Route12_Blocks, $4710
-	dr Route15_Blocks, $49cc
-	dr Route16_Blocks, $4b84
-	dr Route18_Blocks, $4c9c
-	dr CalcLevelFromExperience, $4d99
-	dr CalcExperience, $4dc0
-	dr PrintStatusAilment, $4e8b
-	dr OaksAideScript, $4ecc
-	dr RemoveGuardDrink, $653a
-
-
 SECTION "rom23", ROMX[$4000], BANK[23]
 ; ROM $17 : $5C000 - $5FFFF
 
@@ -284,6 +247,7 @@ SECTION "rom58", ROMX[$4000], BANK[58]
 	dr PrintSurfingMinigameHighScore, $4c5c
 	dr PrintDiploma, $4cb1
 	dr PrintPCBox, $4d35
+	dr PrintFanClubPortrait, $4e24
 	dr PrinterDebug, $4e79
 	dr Printer_PrepareSurfingMinigameHighScoreTileMap, $5101
 	dr SetEnemyTrainerToStayAndFaceAnyDirection, $69d5
