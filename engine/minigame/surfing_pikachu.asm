@@ -2398,7 +2398,7 @@ DrawSurfingPikachuMinigameIntroBackground:
 	ld hl, wTileMap
 	ld de, Tilemap_f905c
 	ld bc, SCREEN_AREA
-.loop:
+.loop
 	ld a, [de]
 	ld [hli], a
 	inc de
