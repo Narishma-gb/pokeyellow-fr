@@ -132,13 +132,13 @@ ROMX $1B
 	"Tilesets 3"
 ROMX $1C
  	"bank1C"
-; ROMX $1D
-; 	"Maps 19"
-; 	"Itemfinder 1"
-; 	"Maps 20"
-; 	"Vending Machine"
-; 	"Maps 21"
-; 	"Itemfinder 2"
+ROMX $1D
+	"Maps 19"
+	"Itemfinder 1"
+	"Maps 20"
+	"Vending Machine"
+	"Maps 21"
+	"Itemfinder 2"
 ROMX $1E
 	"bank1E"
 ROMX $1F
@@ -217,7 +217,7 @@ ROMX $3C
 	"Pikachu Graphics 2"
 	"Credits"
 	"Maps 22"
-; 	"Hidden Events Core"
+	"Hidden Events Core"
 ROMX $3D
 	"Battle Engine 8"
 	"Pics 7"
@@ -225,7 +225,7 @@ ROMX $3D
 ; ROMX $3E
 ; 	"Surfing Minigame"
 ROMX $3F
-; 	"Overworld Pikachu"
+	"Overworld Pikachu"
 	org $666f
 	"NPC Sprites 3"
 WRAM0

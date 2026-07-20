@@ -279,7 +279,7 @@ INCLUDE "engine/events/in_game_trades.asm"
 INCLUDE "engine/gfx/palettes.asm"
 INCLUDE "engine/menus/save.asm"
 
-/*
+
 SECTION "Itemfinder 1", ROMX
 
 INCLUDE "engine/items/itemfinder.asm"
@@ -295,7 +295,7 @@ SECTION "Itemfinder 2", ROMX
 INCLUDE "engine/menus/league_pc.asm"
 INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "engine/events/hidden_items.asm"
-*/
+
 
 SECTION "bank1E", ROMX
 
@@ -344,12 +344,12 @@ SECTION "Credits", ROMX
 INCLUDE "engine/events/pokecenter_chansey.asm"
 INCLUDE "engine/movie/credits.asm"
 
-/*
+
 SECTION "Hidden Events Core", ROMX
 
 INCLUDE "engine/overworld/hidden_events.asm"
 INCLUDE "engine/events/hidden_events/vermilion_gym_trash2.asm"
-*/
+
 
 SECTION "Battle Engine 8", ROMX
 
@@ -394,7 +394,7 @@ SECTION "Surfing Minigame", ROMX
 INCLUDE "engine/minigame/surfing_pikachu.asm"
 INCLUDE "engine/movie/intro_yellow.asm"
 INCLUDE "engine/gfx/animated_objects.asm"
-
+*/
 
 SECTION "Overworld Pikachu", ROMX
 
@@ -407,4 +407,3 @@ INCLUDE "engine/pikachu/pikachu_emotions.asm"
 INCLUDE "engine/pikachu/pikachu_movement.asm"
 INCLUDE "engine/pikachu/pikachu_pic_animation.asm"
 INCLUDE "engine/debug/debug_menu.asm"
-*/

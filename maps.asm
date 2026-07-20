@@ -1095,7 +1095,7 @@ INCLUDE "scripts/SilphCo11F.asm"
 INCLUDE "data/maps/objects/SilphCo11F.asm"
 SilphCo11F_Blocks: INCBIN "maps/SilphCo11F.blk"
 
-/*
+
 SECTION "Maps 19", ROMX
 
 CopycatsHouse1F_Blocks: INCBIN "maps/CopycatsHouse1F.blk"
@@ -1221,7 +1221,7 @@ INCLUDE "data/maps/headers/AgathasRoom.asm"
 INCLUDE "scripts/AgathasRoom.asm"
 INCLUDE "data/maps/objects/AgathasRoom.asm"
 AgathasRoom_Blocks: INCBIN "maps/AgathasRoom.blk"
-*/
+
 
 SECTION "Maps 22", ROMX
 
