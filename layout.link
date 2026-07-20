@@ -222,8 +222,8 @@ ROMX $3D
 	"Battle Engine 8"
 	"Pics 7"
 	"Battle Engine 9"
-; ROMX $3E
-; 	"Surfing Minigame"
+ROMX $3E
+ 	"Surfing Minigame"
 ROMX $3F
 	"Overworld Pikachu"
 	org $666f

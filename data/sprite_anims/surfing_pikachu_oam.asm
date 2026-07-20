@@ -14,10 +14,10 @@ SurfingPikachuOAMData:
 	dbw $66, .SurfingPikachu
 	dbw $33, .SurfingPikachu
 	dbw $69, .SurfingPikachu
-	dbw $6c, .UnusedFrontPikachu
-	dbw $9c, .UnusedBackPikachu
-	dbw $a0, .ResultsPikachu
-	dbw $a3, .ResultsPikachu
+	dbw $6c, .SurfingPikachu
+	dbw $9c, .SurfingPikachu
+	dbw $a0, .SurfingPikachu
+	dbw $a3, .SurfingPikachu
 	dbw $a7, .SmallSplash
 	dbw $a8, .LargeSplash
 	dbw $98, .EmptySurfboard ; when Pikachu has fallen off
@@ -57,8 +57,26 @@ SurfingPikachuOAMData:
 
 .StartText:
 .GoalText:
+	db 16
+	db  -8, -28, $00, 0
+	db  -8, -20, $01, 0
+	db  -8, -12, $02, 0
+	db  -8,  -4, $03, 0
+	db  -8,   4, $04, 0
+	db  -8,  12, $05, 0
+	db  -8,  20, $06, 0
+	db   0, -28, $10, 0
+	db   0, -20, $11, 0
+	db   0, -12, $12, 0
+	db   0,  -4, $13, 0
+	db   0,   4, $14, 0
+	db   0,  12, $15, 0
+	db   0,  20, $16, 0
+	db   8, -12, $07, 0
+	db   8,  -4, $17, 0
+
 .OhNoText:
-	db 12
+	db 14
 	db  -8, -24, $00, 0
 	db  -8, -16, $01, 0
 	db  -8,  -8, $02, 0
@@ -71,6 +89,8 @@ SurfingPikachuOAMData:
 	db   0,   0, $13, 0
 	db   0,   8, $14, 0
 	db   0,  16, $15, 0
+	db   8,  -8, $1e, 0
+	db   8,   0, $2e, 0
 
 .WaterSpray:
 	db 3
