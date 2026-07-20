@@ -113,16 +113,16 @@ ROMX $16
 	"bank16"
 	"Maps 14"
 	"Saffron Guards"
-; ROMX $17
-; 	"Maps 15"
-; 	"Starter Dex"
-; 	"Maps 16"
-; 	"Hidden Events 3"
-; ROMX $18
-; 	"Maps 17"
-; 	"Cinnabar Lab Fossils"
-; 	"Maps 18"
-; 	"Hidden Events 4"
+ROMX $17
+	"Maps 15"
+	"Starter Dex"
+	"Maps 16"
+	"Hidden Events 3"
+ROMX $18
+	"Maps 17"
+	"Cinnabar Lab Fossils"
+	"Maps 18"
+	"Hidden Events 4"
 ROMX $19
 	"Tilesets 1"
 ROMX $1A

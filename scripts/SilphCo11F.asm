@@ -99,10 +99,6 @@ SilphCo11F_ScriptPointers:
 	dw_const SilphCo11FScript14,                    SCRIPT_SILPHCO11F_SCRIPT14
 
 SilphCo11FDefaultScript:
-IF DEF(_DEBUG)
-	call DebugPressedOrHeldB
-	ret nz
-ENDC
 	CheckEvent EVENT_BEAT_SILPH_CO_11F_JESSIE_JAMES
 	call z, SilphCo11FScript_6229c
 	CheckEvent EVENT_782

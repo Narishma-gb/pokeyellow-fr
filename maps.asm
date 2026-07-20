@@ -825,7 +825,7 @@ INCLUDE "scripts/HallOfFame.asm"
 INCLUDE "data/maps/objects/HallOfFame.asm"
 HallOfFame_Blocks: INCBIN "maps/HallOfFame.blk"
 
-/*
+
 SECTION "Maps 15", ROMX
 
 SaffronMart_Blocks:
@@ -1095,7 +1095,7 @@ INCLUDE "scripts/SilphCo11F.asm"
 INCLUDE "data/maps/objects/SilphCo11F.asm"
 SilphCo11F_Blocks: INCBIN "maps/SilphCo11F.blk"
 
-
+/*
 SECTION "Maps 19", ROMX
 
 CopycatsHouse1F_Blocks: INCBIN "maps/CopycatsHouse1F.blk"

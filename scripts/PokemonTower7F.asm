@@ -28,10 +28,6 @@ PokemonTower7F_ScriptPointers:
 	dw_const PokemonTower7FWarpToMrFujiHouseScript, SCRIPT_POKEMONTOWER7F_WARP_TO_MR_FUJI_HOUSE
 
 PokemonTower7FScript0:
-IF DEF(_DEBUG)
-	call DebugPressedOrHeldB
-	ret nz
-ENDC
 	CheckEvent EVENT_BEAT_POKEMONTOWER_7_JESSIE_JAMES
 	call z, PokemonTower7FScript_60d2a
 	ret

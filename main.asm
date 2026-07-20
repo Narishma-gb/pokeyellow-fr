@@ -228,7 +228,7 @@ SECTION "Saffron Guards", ROMX
 
 INCLUDE "engine/events/saffron_guards.asm"
 
-/*
+
 SECTION "Starter Dex", ROMX
 
 INCLUDE "engine/events/starter_dex.asm"
@@ -258,7 +258,7 @@ INCLUDE "engine/events/hidden_events/gym_statues.asm"
 INCLUDE "engine/events/hidden_events/bench_guys.asm"
 INCLUDE "engine/events/hidden_events/blues_room.asm"
 INCLUDE "engine/events/hidden_events/pokecenter_pc.asm"
-*/
+
 
 SECTION "Version Graphics", ROMX
 
