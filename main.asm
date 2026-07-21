@@ -388,13 +388,13 @@ INCLUDE "engine/battle/get_trainer_name.asm"
 INCLUDE "engine/math/random.asm"
 INCLUDE "engine/predefs.asm"
 
-/*
+
 SECTION "Surfing Minigame", ROMX
 
 INCLUDE "engine/minigame/surfing_pikachu.asm"
 INCLUDE "engine/movie/intro_yellow.asm"
 INCLUDE "engine/gfx/animated_objects.asm"
-*/
+
 
 SECTION "Overworld Pikachu", ROMX
 

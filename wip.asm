@@ -36,10 +36,3 @@ SECTION "rom58", ROMX[$4000], BANK[58]
 	dr Printer_PrepareSurfingMinigameHighScoreTileMap, $5101
 	dr DisplayDiplomaTop, $59ee
 	dr SetEnemyTrainerToStayAndFaceAnyDirection, $69d5
-
-
-SECTION "rom62", ROMX[$4000], BANK[62]
-; ROM $3e : $F8000 - $FBFFF
-
-	dr SurfingPikachuMinigame, $4000
-    dr PlayIntroScene, $582a
