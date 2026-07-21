@@ -16,10 +16,6 @@ To set up the repository, see [**INSTALL.md**](INSTALL.md).
 - Brianum's [**pokeyellow-de**][pokeyellow-de] made this considerably easier, having documented every place where a code/data translation change is likely to occur, and providing the final WRAM layout.
 - einstein95's [**pokered-fr**][pokered-fr] provided insight on metric unit formatting in the Pokédex, that was copied in this project
 
-## Note
-
-A base ROM is required to build, it should be placed at the top-level directory: `baserom.bin`.
-
 ## See also
 
 - **Wiki** (WIP)

@@ -313,7 +313,7 @@ SECTION "BG Map Attributes", ROMX
 INCLUDE "data/cgb/bg_map_attributes.asm"
 INCLUDE "engine/gfx/bg_map_attributes.asm"
 
-/*
+
 SECTION "bank3A", ROMX
 
 INCLUDE "data/pokemon/names.asm"
@@ -323,7 +323,7 @@ INCLUDE "engine/printer/printer.asm"
 INCLUDE "engine/events/diploma2.asm"
 INCLUDE "engine/printer/printer2.asm"
 INCLUDE "engine/overworld/npc_movement_2.asm"
-*/
+
 
 SECTION "Pikachu PCM", ROMX
 

@@ -206,8 +206,8 @@ ROMX $38
 	"Pikachu Cries 13"
 ROMX $39
 	"Pikachu Graphics 1"
-; ROMX $3A
-; 	"bank3A"
+ROMX $3A
+	"bank3A"
 ROMX $3B
 	"Text 10"
 ROMX $3C

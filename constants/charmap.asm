@@ -185,6 +185,7 @@
 	charmap "y'",         $df
 
 	charmap "'",         $e0
+	charmap "<'>",       $e0
 	charmap "<PK>",      $e1
 	charmap "<MN>",      $e2
 	charmap "-",         $e3

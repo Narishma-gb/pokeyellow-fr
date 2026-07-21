@@ -6,14 +6,13 @@ rom_obj := \
 	home.o \
 	maps.o \
 	ram.o \
+	main.o \
 	text.o \
-	wip.o \
 	gfx/pics.o \
 	gfx/pikachu.o \
 	gfx/sprites.o \
 	gfx/surfing_pikachu.o \
 	gfx/tilesets.o
-# 	main.o \
 
 pokeyellow_obj       := $(rom_obj)
 pokeyellow_vc_obj    := $(rom_obj:.o=_vc.o)
@@ -130,7 +129,7 @@ RGBLINKFLAGS += -d -p 0x00
 RGBFIXFLAGS += -cjsv -i APSF -k 01 -l 0x33 -m MBC5+RAM+BATTERY -p 0 -r 3 -t "POKEMON YEL"
 
 %.gbc: $$(%_obj) layout.link
-	$(RGBLINK) $(RGBLINKFLAGS) -l layout.link -m $*.map -n $*.sym -O baserom.bin -o $@ $(filter %.o,$^)
+	$(RGBLINK) $(RGBLINKFLAGS) -l layout.link -m $*.map -n $*.sym -o $@ $(filter %.o,$^)
 	$(RGBFIX) $(RGBFIXFLAGS) $@
 
 

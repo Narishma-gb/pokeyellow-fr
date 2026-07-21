@@ -37,7 +37,7 @@ DisplayDiplomaTop:
 	call PlaceString
 
 	ld de, DiplomaGameFreak
-	hlcoord 9, 16
+	hlcoord 9, 15
 	call PlaceString
 
 	ld b, SET_PAL_GENERIC
@@ -49,17 +49,16 @@ DisplayDiplomaTop:
 	ret
 
 DiplomaText:
-	db CIRCLE_TILE_ID, "Diploma", CIRCLE_TILE_ID, "@"
+	db CIRCLE_TILE_ID, "Diplôme", CIRCLE_TILE_ID, "@"
 
 DiplomaPlayer:
-	db "Player@"
+	db "Joueur@"
 
 DiplomaCongrats:
-	db   "Congrats! This"
-	next "diploma certifies"
-	next "that you have"
-	next "completed your"
-	next "#DEX.@"
+	db   "Fabuleux! Ce"
+	next "diplôme certifie"
+	next "la perfection de"
+	next "votre PokéDex.@"
 
 DiplomaGameFreak:
 	db "GAME FREAK@"
@@ -84,8 +83,8 @@ DisplayDiplomaBottom:
 	call Diploma_Surfing_CopyBox
 
 	ld de, CongratulationsTiles
-	hlcoord 5, 13
-	lb bc, 1, 11
+	hlcoord 7, 13
+	lb bc, 1, 6
 	call Diploma_Surfing_CopyBox
 
 	ld de, DiplomaPlayTime
@@ -120,7 +119,7 @@ DiplomaMewTiles:
 INCBIN "gfx/diploma/diploma_mew.tilemap"
 
 DiplomaPlayTime:
-	db "PLAY TIME@"
+	db "DUREE JEU@"
 
 DiplomaDrawHorizontalBorder:
 	ld c, SCREEN_WIDTH / 2
