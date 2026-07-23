@@ -1,5 +1,6 @@
 SECTION "NULL", ROM0
 NULL::
+vc_hook NULL
 
 INCLUDE "home/header.asm"
 
