@@ -3,17 +3,20 @@ _CableClubNPCPleaseWaitText::
 	text_end
 
 _CableClubNPCLinkClosedBecauseOfInactivityText::
-;	vc_patch Change_link_closed_inactivity_message
-;IF DEF(_YELLOW_VC)
-
-;ELSE
-
-;ENDC
-;	vc_patch_end
-
+	vc_patch Change_link_closed_inactivity_message
+IF DEF(_YELLOW_VC)
+	text "A bientôt!"
+	done
+	text_start
+	db   "é"
+	line "rompu pour cause"
+	cont "d'inactivité."
+ELSE
 	text "Le lien a été"
 	line "rompu pour cause"
 	cont "d'inactivité."
+ENDC
+	vc_patch_end
 
 	para "Prévenez votre"
 	line "ami et revenez"

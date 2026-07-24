@@ -168,76 +168,76 @@ Mode = 2
 Address = {HEX @}
 Type = 17
 
-[linkCable block input@NULL]
+[linkCable block input@Wireless_TryQuickSave_block_input]
 Mode = 2
-Address = 0x7137
+Address = {HEX @+5}
 Type = 18
 
-[save game end@NULL]
+[save game end@Trade_save_game_end]
 Mode = 2
-Address = 0x5B3E
+Address = {HEX @}
 Type = 20
 
-[Change_MSG@NULL]
+[Change_MSG@Change_link_closed_inactivity_message]
 Mode = 1
-Address = 0xB4014
-Fixcode = a12: 80 7F A1 A8 A4 AD B3 C9 B3 E7 57 00
+Address = {HEX @+1}
+Fixcode = {PATCH_ +1 12}
 
-[fight_ret@NULL]
+[fight_ret@BattleRandom_ret]
 Mode = 1
-Address = 0x3F05A
-Fixcode = 0xC9
+Address = {HEX @}
+Fixcode = {PATCH}
 
-[fight_ret_c@NULL]
+[fight_ret_c@Unknown_BattleRandom_ret_c]
 Mode = 2
-Address = 0x3F05A
+Address = {HEX @}
 Type = 98
 
                                                                     
 ;Mem Write: pc32 = 0xf9929 addr = 0xc634 value = 0xe                
-[FPA 031801 Begin1@NULL]                                                 
+[FPA 031801 Begin1@Reduce_intro_scene_flashing_0E]                                                 
 Mode = 3                                                            
 Type = 0                                                            
-Address = 0xf992a                                                   
+Address = {hex @}                                                   
 MotionBEnable0 = 3                                                  
 MotionBlur0 = 28                                                    
 ConditionType = 0                                                   
-ConditionValueA = a2: 34 c6                                         
-ConditionValueB = a2: 00 00                                         
-ConditionValueC = a2: 0e 00                                         
+ConditionValueA = {dws_ wYellowIntroCurrentScene}                                         
+ConditionValueB = {dws_ ==                      }                                         
+ConditionValueC = {dws_ 0x0e                    }                                         
                                                                     
 ;Mem Write: pc32 = 0xf9e51 addr = 0xc635 value = 0x33               
-[FPA 031801 End1@NULL]                                                   
+[FPA 031801 End1@Stop_reducing_intro_scene_flashing_0E]                                                   
 Mode = 3                                                            
 Type = 1                                                            
-Address = 0xf9e4d                                                   
+Address = {hex @}                                                   
 ConditionType = 0                                                   
-ConditionValueA = a4: 34 c6 35 c6                                   
-ConditionValueB = a4: 00 00 00 00                                   
-ConditionValueC = a4: 0e 00 33 00    
+ConditionValueA = {dws_ wYellowIntroCurrentScene wYellowIntroSceneTimer}                                   
+ConditionValueB = {dws_ ==                       ==                    }                                   
+ConditionValueC = {dws_ 0x0e                     0x33                  }    
 
 
 ;Mem Write: pc32 = 0xf9d88 addr = 0xc635 value = 0x28                                                                  
-[FPA 031801 Begin2@NULL]                                                                         
+[FPA 031801 Begin2@Reduce_intro_scene_flashing_0F]                                                                         
 Mode = 3                                                                                
 Type = 0                                                                                
-Address = 0xf9d88                                                                    
+Address = {hex @}                                                                    
 MotionBEnable0 = 3                                                                      
 MotionBlur0 = 4                                                                        
 ConditionType = 0                                                                    
-ConditionValueA = a2: 34 c6                                                          
-ConditionValueB = a2: 00 00                                                          
-ConditionValueC = a2: 0f 00  
+ConditionValueA = {dws_ wYellowIntroCurrentScene}                                                          
+ConditionValueB = {dws_ ==                      }                                                          
+ConditionValueC = {dws_ 0x0f                    }  
 
 ;   000f9e46h: A7 C9 37 C9 21                                                        
-[FPA 031801 End2@NULL]             
+[FPA 031801 End2@Stop_reducing_intro_scene_flashing_0F]             
 Mode = 3                      
 Type = 1                      
-Address = 0xF9e48
+Address = {Hex @}
 ConditionType = 0                             
-ConditionValueA = a2: 34 c6         
-ConditionValueB = a2: 00 00         
-ConditionValueC = a2: 0f 00   
+ConditionValueA = {dws_ wYellowIntroCurrentScene}         
+ConditionValueB = {dws_ ==                      }         
+ConditionValueC = {dws_ 0x0f                    }   
 
 
 ;222222aaaaaaaaaaaaaaaa: pc32 = 0xf9847 addr = 0xffb3 value = 0x0    
@@ -245,14 +245,14 @@ ConditionValueC = a2: 0f 00
 ;ROM:F984A                 and     $B          
 ;ROM:F984C                 jr      nz, unk_986B
 ; 000f9848h: F0 B3 E6 0B                                                                         
-[FPA 031801 End3@NULL]                   
+[FPA 031801 End3@Stop_Reducing_intro_scene_flashing]                   
 Mode = 3                            
 Type = 1                            
-Address = 0xf986b                  
+Address = {hex @}                  
 ConditionType = 11                   
-ConditionValueA = a6: 34 c6 00 00 34 c6     
-ConditionValueB = a6: 00 00 11 00 00 00     
-ConditionValueC = a6: 0e 00 00 00 0f 00
+ConditionValueA = {dws_ wYellowIntroCurrentScene  00  wYellowIntroCurrentScene}     
+ConditionValueB = {dws_ ==                        ||  ==                      }     
+ConditionValueC = {dws_ 0x0e                      00  0x0f                    }
 
 
 

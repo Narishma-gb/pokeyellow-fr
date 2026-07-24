@@ -123,8 +123,8 @@ Jumptable_f9906:
 
 YellowIntro_NextScene:
 	ld hl, wYellowIntroCurrentScene
-	inc [hl]
 	vc_hook Reduce_intro_scene_flashing_0E
+	inc [hl]
 	ret
 
 YellowIntroScene0:
@@ -714,8 +714,8 @@ YellowIntro_CheckFrameTimerDecrement:
 
 YellowIntro_LoadDMGPalAndIncrementCounter:
 	ld hl, wYellowIntroSceneTimer
-	ld a, [hl]
 	vc_hook Stop_reducing_intro_scene_flashing_0E
+	ld a, [hl]
 	inc [hl]
 	ld l, a
 	ld h, $0
