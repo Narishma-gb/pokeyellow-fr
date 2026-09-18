@@ -2690,10 +2690,10 @@ SelectMenuItem:
 	call PlaceString
 	jr .select
 .battleselect
-	; Hide move swap cursor in TestBattle.
+	; Hide move swap cursor in FightDebugMenu.
 	ld a, [wStatusFlags7]
 	bit BIT_TEST_BATTLE, a
-	; This causes PrintMenuItem to not run in TestBattle.
+	; This causes PrintMenuItem to not run in FightDebugMenu.
 	; MoveSelectionMenu still draws part of its window, an issue
 	; which did not seem to exist in the Japanese versions.
 	jr nz, .select
@@ -3717,7 +3717,7 @@ CheckPlayerStatusConditions:
 	ld [wPlayerNumAttacksLeft], a
 	ld hl, GetPlayerAnimationType ; skip damage calculation (deal damage equal to last hit),
 	                              ; DecrementPP and MoveHitTest
-	jp nz, .returnToHL  ; redundant leftover code, the case wEnemyNumAttacksLeft == 0
+	jp nz, .returnToHL  ; redundant leftover code, the case wPlayerNumAttacksLeft == 0
 						; is handled within CheckNumAttacksLeft
 	jp .returnToHL
 
@@ -6133,7 +6133,7 @@ GetCurrentMove:
 	jr .selected
 .player
 	ld de, wPlayerMoveNum
-	; Apply InitBattleVariables to TestBattle.
+	; Apply InitBattleVariables to FightDebugMenu.
 	ld a, [wStatusFlags7]
 	bit BIT_TEST_BATTLE, a
 	ld a, [wTestBattlePlayerSelectedMove]
@@ -6171,7 +6171,7 @@ LoadEnemyMonData:
 	ld b, [hl]
 	jr nz, .storeDVs
 	ld a, [wIsInBattle]
-	cp $2 ; is it a trainer battle?
+	cp TRAINER_BATTLE
 ; fixed DVs for trainer mon
 	ld a, ATKDEFDV_TRAINER
 	ld b, SPDSPCDV_TRAINER
@@ -6194,7 +6194,7 @@ LoadEnemyMonData:
 	call CalcStats
 	pop hl
 	ld a, [wIsInBattle]
-	cp $2 ; is it a trainer battle?
+	cp TRAINER_BATTLE
 	jr z, .copyHPAndStatusFromPartyData
 	ld a, [wEnemyBattleStatus3]
 	bit TRANSFORMED, a ; is enemy mon transformed?
@@ -6237,7 +6237,7 @@ LoadEnemyMonData:
 	ld [de], a
 	inc de
 	ld a, [wIsInBattle]
-	cp $2 ; is it a trainer battle?
+	cp TRAINER_BATTLE
 	jr nz, .copyStandardMoves
 ; if it's a trainer battle, copy moves from enemy party data
 	ld hl, wEnemyMon1Moves
